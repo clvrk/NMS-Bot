@@ -4,7 +4,7 @@ class reqs:
     """Methods to handle requests"""
 
     @classmethod ## creating one instance for all requests
-    async def ses(self):
+    def ses(self):
         self.ses = aiohttp.ClientSession()
         return self.ses
 
@@ -29,7 +29,8 @@ class reqs:
     @classmethod ## GET request
     async def get(self, url: str, *, headers: any = None):
         headers = reqs.header_check(headers)
-        async with reqs.ses.get(url, headers=headers) as r:
+        ses = reqs.ses()
+        async with ses.get(url, headers=headers) as r:
             if r.status in range(200, 299):
                 data = await r.json()
                 return data
@@ -40,7 +41,8 @@ class reqs:
         async def post(self, url: str, *, headers: any = None, data: any = None):
             headers = reqs.header_check(headers)
             data = reqs.data_check(data)
-            async with reqs.ses.post(url, headers=headers, data=data) as r:
+            ses = reqs.ses()
+            async with ses.post(url, headers=headers, data=data) as r:
                 if r.status in range(200, 299):
                     data = await r.json()
                     return data
@@ -51,10 +53,11 @@ class reqs:
         async def put(self, url: str, *, headers: any = None, data: any = None):
             headers = reqs.header_check(headers)
             data = reqs.data_check(data)
-            async with reqs.ses.put(url, headers=headers, data=data) as r:
+            ses = reqs.ses()
+            async with ses.put(url, headers=headers, data=data) as r:
                 if r.status in range(200, 299):
                     data = await r.json()
                     return data
                 else:
                     return r.status
-        
+
