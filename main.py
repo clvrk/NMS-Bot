@@ -16,8 +16,9 @@ async def on_ready():
 
 extensions = ['Cogs.planetinfo']
 
-for ext in extensions:
-    client.load_extension(ext)
+if __name__ == '__main__':
+    for ext in extensions:
+        client.load_extension(ext)
 
 
 client.run(token)
