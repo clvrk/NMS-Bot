@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import discord
 from discord.ext import commands
 import aiohttp
+from Cogs.reqs import reqs
 
 load_dotenv()
 
@@ -12,6 +13,7 @@ client = commands.AutoShardedBot(command_prefix=commands.when_mentioned_or('nms!
 @client.event
 async def on_ready():
     print(f'{client.user} is online.')
+
 
 
 extensions = ['Cogs.planetinfo']
