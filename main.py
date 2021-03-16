@@ -3,7 +3,6 @@ from dotenv import load_dotenv
 import discord
 from discord.ext import commands
 import aiohttp
-from Cogs.reqs import reqs 
 
 load_dotenv()
 
