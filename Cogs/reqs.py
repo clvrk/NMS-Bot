@@ -48,7 +48,7 @@ class reqs:
                     return data
                 else:
                     return r.status
-        
+
         @classmethod ## PUT request
         async def put(self, url: str, *, headers: any = None, data: any = None):
             headers = reqs.header_check(headers)
