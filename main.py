@@ -14,7 +14,7 @@ async def on_ready():
     print(f'{client.user} is online.')
 
 
-extensions = ['Cogs.planetinfo']
+extensions = ['Cogs.nmsinfo']
 
 if __name__ == '__main__':
     for ext in extensions:

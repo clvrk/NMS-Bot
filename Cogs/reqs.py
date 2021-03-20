@@ -35,7 +35,7 @@ class reqs:
                 data = await r.json()
                 return data
             else:
-                return r.status
+                print(r.status)
         
         @classmethod ## POST request
         async def post(self, url: str, *, headers: any = None, data: any = None):
@@ -47,8 +47,8 @@ class reqs:
                     data = await r.json()
                     return data
                 else:
-                    return r.status
-        
+                    print(r.status)
+
         @classmethod ## PUT request
         async def put(self, url: str, *, headers: any = None, data: any = None):
             headers = reqs.header_check(headers)
@@ -59,5 +59,5 @@ class reqs:
                     data = await r.json()
                     return data
                 else:
-                    return r.status
+                    print(r.status)
 

@@ -1,2 +1,2 @@
 ## TODO
-* Get data for planet, animals, flora, fauna, elements, everything.
+* Get data for planets, animals, flora, fauna, elements, everything.
